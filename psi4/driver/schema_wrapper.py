@@ -588,10 +588,10 @@ def run_json_qcschema(json_data, clean, json_serialization, keep_wfn=False):
 
     # Add in handling of matrix arguments which need to be obtained by a
     # a function call.
-    if "tIJAB" in json_data["extras"]["qcvars"]:
-        json_data["extras"]["qcvars"]["tIJAB"] = wfn.get_amplitudes("tIJAB").to_array()
-    if "tIA" in json_data["extras"]["qcvars"]:
-        json_data["extras"]["qcvars"]["tIA"] = wfn.get_amplitudes("tIA").to_array()
+    if "tIJAB" in json_data["extras"]["psi4:tamps"]:
+        json_data["extras"]["psi4:tamps"]["tIJAB"] = wfn.get_amplitudes("tIJAB").to_array()
+    if "tIA" in json_data["extras"]["psi4:tamps"]:
+        json_data["extras"]["psi4:tamps"]["tIA"] = wfn.get_amplitudes("tIA").to_array()
     if "Da" in json_data["extras"]["qcvars"]:
         json_data["extras"]["qcvars"]["Da"] = wfn.Da().to_array()
 
